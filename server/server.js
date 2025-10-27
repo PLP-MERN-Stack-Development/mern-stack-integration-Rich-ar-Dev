@@ -15,6 +15,15 @@ const authRoutes = require('./routes/auth');
 // Load environment variables
 dotenv.config();
 
+// Connect to database helper
+const connectDB = require('./config/db');
+
+// Validate required environment variables
+if (!process.env.JWT_SECRET) {
+  console.error('FATAL ERROR: JWT_SECRET is not set in environment. Please set JWT_SECRET in server/.env or your environment.');
+  process.exit(1);
+}
+
 // Initialize Express app
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -55,8 +64,7 @@ app.use((err, req, res, next) => {
 });
 
 // Connect to MongoDB and start server
-mongoose
-  .connect(process.env.MONGODB_URI)
+connectDB()
   .then(() => {
     console.log('Connected to MongoDB');
     app.listen(PORT, () => {
@@ -65,7 +73,15 @@ mongoose
   })
   .catch((err) => {
     console.error('Failed to connect to MongoDB', err);
-    process.exit(1);
+    // In development, continue running the server so front-end work can proceed
+    if (process.env.NODE_ENV !== 'production') {
+      console.warn('Continuing without a DB connection (development mode). Some endpoints will return fallback data.');
+      app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT} (without DB)`);
+      });
+    } else {
+      process.exit(1);
+    }
   });
 
 // Handle unhandled promise rejections

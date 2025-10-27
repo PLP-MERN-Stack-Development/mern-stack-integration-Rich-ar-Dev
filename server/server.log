@@ -1,0 +1,33 @@
+
+> mern-blog-server@1.0.0 dev
+> nodemon server/server.js
+
+[33m[nodemon] 2.0.22[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,json[39m
+[32m[nodemon] starting `node server/server.js server.js`[39m
+Connected to MongoDB
+node:events:502
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1902:16)
+    at listenInCluster (node:net:1959:12)
+    at Server.listen (node:net:2061:7)
+    at Function.listen (/home/richie-ar-dev/Desktop/mern-stack-integration-Rich-ar-Dev/server/node_modules/express/lib/application.js:635:24)
+    at /home/richie-ar-dev/Desktop/mern-stack-integration-Rich-ar-Dev/server/server.js:70:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1938:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '::',
+  port: 5000
+}
+
+Node.js v20.19.4
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m

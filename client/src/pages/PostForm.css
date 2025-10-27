@@ -1,0 +1,85 @@
+/* Forest themed PostForm styles */
+.post-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.post-form-card {
+  width: 100%;
+  max-width: 720px;
+  background: linear-gradient(180deg, #163e2b 0%, #225e3a 100%);
+  color: #f4fff8;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 30px rgba(6, 24, 12, 0.6);
+}
+
+.post-form-card h2 {
+  margin: 0 0 1rem 0;
+  color: #eafff1;
+}
+
+.post-form-card form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.post-form-card label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.post-form-card input[type="text"],
+.post-form-card input[type="file"],
+.post-form-card select,
+.post-form-card textarea {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: #ffffff;
+  color: #0b2b16;
+  box-sizing: border-box;
+}
+
+.post-form-card textarea { min-height: 160px; }
+
+.post-form-card .error {
+  color: #ffd6d6;
+  background: rgba(80, 0, 0, 0.08);
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.post-form-card .success {
+  color: #07220f;
+  background: linear-gradient(90deg, rgba(194,255,217,0.18), rgba(255,255,255,0.02));
+  padding: 0.6rem;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.post-form-card button {
+  display: inline-block;
+  background: linear-gradient(180deg, #7bbf6a, #3a8a47);
+  color: #07220f;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.post-form-card button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .post-form-card { padding: 1rem; border-radius: 8px }
+}

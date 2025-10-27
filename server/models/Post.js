@@ -18,6 +18,9 @@ const PostSchema = new mongoose.Schema(
       type: String,
       default: 'default-post.jpg',
     },
+    featuredImageId: {
+      type: String,
+    },
     slug: {
       type: String,
       required: true,

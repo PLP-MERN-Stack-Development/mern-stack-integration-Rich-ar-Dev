@@ -1,0 +1,14 @@
+
+> mern-blog-server@1.0.0 dev
+> nodemon server/server.js
+
+[33m[nodemon] 2.0.22[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,json[39m
+[32m[nodemon] starting `node server/server.js server.js`[39m
+Connected to MongoDB
+Server running on port 5000
+POST /api/auth/register
+POST /api/auth/login
+GET /
